@@ -1,11 +1,15 @@
 const bingoCard = [];
 const numberAppearsAlready = [];
 const numbersAppearedOnGame = [];
+let randomnumber;
 let continueYes = true;
 let isBingo = false;
+const lines = 0;
+const totalLines = 0;
 let line1 = false;
 let line2 = false;
 let line3 = false;
+const twoLines = 0;
 
 const askName = () => {
   const name = prompt("Bingo game, please insert your name?");
