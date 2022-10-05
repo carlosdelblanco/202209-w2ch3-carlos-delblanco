@@ -1,15 +1,11 @@
 const bingoCard = [];
 const numberAppearsAlready = [];
 const numbersAppearedOnGame = [];
-let randomnumber;
 let continueYes = true;
 let isBingo = false;
-let lines = 0;
-let totalLines = 0;
-let line1 = false,
-  line2 = false,
-  line3 = false;
-let twoLines = 0;
+let line1 = false;
+let line2 = false;
+let line3 = false;
 
 const askName = () => {
   const name = prompt("Bingo game, please insert your name?");
@@ -31,43 +27,13 @@ const generateCard = () => {
 
 const showCard = () => {
   console.log(
-    "Row 1: | " +
-      bingoCard[0].number +
-      " | " +
-      bingoCard[1].number +
-      " | " +
-      bingoCard[2].number +
-      " | " +
-      bingoCard[3].number +
-      " | " +
-      bingoCard[4].number +
-      " | "
+    `Row 1: | ${bingoCard[0].number} | ${bingoCard[1].number} | ${bingoCard[2].number} | ${bingoCard[3].number} | ${bingoCard[4].number} | `
   );
   console.log(
-    "Row 2: | " +
-      bingoCard[5].number +
-      " | " +
-      bingoCard[6].number +
-      " | " +
-      bingoCard[7].number +
-      " | " +
-      bingoCard[8].number +
-      " | " +
-      bingoCard[9].number +
-      " | "
+    `Row 2: | ${bingoCard[5].number} | ${bingoCard[6].number} | ${bingoCard[7].number} | ${bingoCard[8].number} | ${bingoCard[9].number} | `
   );
   console.log(
-    "Row 3: | " +
-      bingoCard[10].number +
-      " | " +
-      bingoCard[11].number +
-      " | " +
-      bingoCard[12].number +
-      " | " +
-      bingoCard[13].number +
-      " | " +
-      bingoCard[14].number +
-      " | "
+    `Row 3: | ${bingoCard[10].number} | ${bingoCard[11].number} | ${bingoCard[12].number} | ${bingoCard[13].number} | ${bingoCard[14].number} | `
   );
 };
 
@@ -89,7 +55,6 @@ const bingoStart = () => {
   } else {
     console.log("The game ended, I'm sorry , you lose!");
   }
-  return;
 };
 
 const newTurn = () => {
@@ -100,7 +65,7 @@ const newTurn = () => {
     bingoCard.forEach((data) => {
       if (data.number === randomNumber) {
         data.appeared = true;
-        data.number = data.number + "X";
+        data.number += "X";
         console.log("\n", `The number found is:  ${randomNumber}!`);
         console.log(showCard());
       }
@@ -129,9 +94,8 @@ const checkLine1 = () => {
     let j = 0;
     if (bingoCard[i].appeared === false) {
       return;
-    } else {
-      j++;
     }
+    j++;
   }
   if ((j = 5)) {
     console.log("Linea 1 !!!!! ", "\n");
@@ -144,9 +108,8 @@ const checkLine2 = () => {
     let j = 0;
     if (bingoCard[i].appeared === false) {
       return;
-    } else {
-      j++;
     }
+    j++;
   }
   if ((j = 5)) {
     console.log("Linea 2 !!!!!", "\n");
@@ -159,9 +122,8 @@ const checkLine3 = () => {
     let j = 0;
     if (bingoCard[i].appeared === false) {
       return;
-    } else {
-      j++;
     }
+    j++;
   }
   if ((j = 5)) {
     console.log("Linea 3 !!!!!", "\n");
@@ -177,7 +139,6 @@ const checkBingo = () => {
   }
   isBingo = true;
   console.log("\n", "BINGO!!!!!!!!");
-  return;
 };
 
 const bingo = () => {
